@@ -1,10 +1,13 @@
 class Salary:
+    item = []
     def __init__(self,name:str,id:int,old_salary:int, new_salary:int):
+
 
         self.name = name
         self.id = id
         self.old_salary = old_salary
         self.new_salary = new_salary 
+        Salary.item.append(self)
 
         assert old_salary >= 10000
         assert new_salary >= 13500
@@ -37,3 +40,5 @@ old_basic = em1.old_basic()
 new_basic = em1.new_basic()
 
 print(f"You old basic salary was {old_basic} and you'll get new basic salary {new_basic}")
+
+print("Your all info is here ",Salary.item)    
